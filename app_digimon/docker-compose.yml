@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+    # app
+    app-digimon:
+        container_name: app-digimon
+        build:
+            context: .
+            dockerfile: Dockerfile
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+        networks:
+            - laravel-network
+
+    # nginx
+    nginx:
+        container_name: nginx
+        image: nginx:alpine
+        ports:
+            - "8989:80"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - laravel-network
+
+networks:
+    laravel-network:
+        driver: bridge
