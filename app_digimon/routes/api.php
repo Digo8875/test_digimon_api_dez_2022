@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/digimons', [App\Http\Controllers\DigimonApiController::class, 'getDigimons'])->name('get_digimons');
+
+Route::get('/digimons/level/{level}', [App\Http\Controllers\DigimonApiController::class, 'getDigimonsByLevel'])->name('get_digimons_by_level');
+
+Route::get('/digimon/name/{name}', [App\Http\Controllers\DigimonApiController::class, 'getDigimonByName'])->name('get_digimon_by_name');
