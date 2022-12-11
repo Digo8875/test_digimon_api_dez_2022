@@ -45,10 +45,16 @@ localhost:8989/api
 ```
 
 2. Endpoints
+
 | Verbo | Endpoint | Exemplo |
 | GET | /digimons | localhost:8989/api/digimons |
 | GET | /digimons/level/{level} | localhost:8989/api/digimons/level/{level} |
 | GET | /digimon/name/{name} | localhost:8989/api/digimon/name/{name} |
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 
 ## A aplicação
