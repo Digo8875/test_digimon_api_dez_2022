@@ -39,6 +39,8 @@ php artisan serve
 
 
 ## Como acessar a aplicação
+
+### Apenas Backend
 1. Devido aos endpoints serem todos GET, você conseguirá acessar a aplicação através do próprio browser, com a porta do servidor Nginx e o basepath da API:
 ```
 localhost:8989/api
@@ -52,12 +54,24 @@ localhost:8989/api
 | GET  | /digimons/level/{level}  | localhost:8989/api/digimons/level/rookie  |
 | GET  | /digimon/name/{name}  | localhost:8989/api/digimon/name/agumon  |
 
+### Com Frontend
+Acesse a aplicação pelo browser:
+1. A - Aplicação utilizando o Docker
+```
+localhost:8989
+```
+
+1. B - Aplicação utilizando o próprio servidor do Laravel
+```
+localhost:8000
+```
+
 
 ## A aplicação
 Com tudo configurado você poderá acessar os endpoints, seja por browser (todos GET) ou alguma ferramenta para realizar requisições Http, como o Postman.
 
 
-## Análise Backend
+## Análise de Arquivos
 Para uma análise mais detalhada, você poderá observar os seguintes arquivos no diretório do Laravel:
 
 - app_digimon
@@ -65,7 +79,21 @@ Para uma análise mais detalhada, você poderá observar os seguintes arquivos n
         - Http 
             - Controllers
                 - DigimonApiController.php
+                - DigimonController.php
         - HttpClient
             - DigimonApiHttpClient.php
+    - public
+        - css
+            - style.css
+        - js
+            - digimon.js
+    - resources
+        - views
+            - digimon
+                - index.blade.php
+            - partials
+                - _mount_digimons.blade.php
+                - _no_data.blade.php
     - routes
         - api.php
+        - web.php
