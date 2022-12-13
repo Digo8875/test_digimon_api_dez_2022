@@ -77,7 +77,7 @@ class DigimonApiController extends Controller
                 $responseData['error'] = $responseClient['ErrorMsg'];
                 $responseCode = 400;
             } else {
-                $responseData['data'] = $responseClient[0];
+                $responseData['data'] = $responseClient;
             }
         } catch (\Exception $e) {
             $digimonClient->serverErrorResponse($responseData, $responseCode);
